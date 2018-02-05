@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Nabd Pharmacy</string>
+    <string name="Name_details">Name:</string>
+    <string name="Boxes_amount_details">Boxes amount:</string>
+    <string name="Stripes_amount_details">Stripes amount:</string>
+    <string name="Notes_details">Notes: </string>
+    <string name="Ex_Date_details">Expiration Date:</string>
+    <string name="details">Details</string>
+    <string name="sort_by_alphabetic">Alphabetic</string>
+    <string name="sort_by_expiration_date">Expiration Date</string>
+    <string name="sort_by_default">Default</string>
+    <string name="open_drawer">open drawer</string>
+    <string name="close_drawer">close drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="imageview_content_desc">Upload Image</string>
+    <string name="boxes_amount">Boxes amount:</string>
+    <string name="stripes_amount">Stripes amount:</string>
+    <string name="expiration_date">Expiration Date:</string>
+    <string name="name">Name</string>
+    <string name="nabd_pharmacy">Nabd Pharmacy</string>
+    <string name="add_new_medicine">Add new medicine</string>
+    <string name="date">Date</string>
+</resources>

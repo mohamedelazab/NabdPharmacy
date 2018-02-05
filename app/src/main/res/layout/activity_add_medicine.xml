@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mohamed.nabdpharmacy.AddMedicineActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        tools:ignore="UselessParent">
+
+        <include
+            android:id="@+id/add_medicine_bar"
+            layout="@layout/bar_add_medicine"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageview_medicine_new"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="5dp"
+                android:tintMode="add"
+
+                android:onClick="onClick"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/ic_action_upload_img"
+                android:backgroundTint="#61109c87"
+                tools:targetApi="lollipop"
+                android:contentDescription="@string/imageview_content_desc" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Name_details"
+                        android:textSize="15sp"
+                        android:padding="12dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorGreen"
+                        android:layout_marginTop="12dp"/>
+
+                    <EditText
+                        android:id="@+id/et_name_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Name_details"
+                        android:textSize="15sp"
+                        android:padding="12dp"
+                        android:textStyle="bold"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="12dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Ex_Date_details"
+                        android:textSize="15sp"
+                        android:padding="12dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorGreen"
+                        android:layout_marginTop="12dp"/>
+
+                    <EditText
+                        android:id="@+id/et_expiration_date_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Ex_Date_details"
+                        android:textSize="15sp"
+                        android:padding="12dp"
+                        android:textStyle="bold"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="12dp"
+                        tools:ignore="TextFields" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Boxes_amount_details"
+                        android:textSize="15sp"
+                        android:padding="12dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorGreen"
+                        android:layout_marginTop="12dp"/>
+
+                    <EditText
+                        android:id="@+id/et_boxes_amount_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Boxes_amount_details"
+                        android:textSize="15sp"
+                        android:padding="12dp"
+                        android:textStyle="bold"
+                        android:inputType="numberDecimal"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="12dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Stripes_amount_details"
+                        android:textSize="15sp"
+                        android:padding="12dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorGreen"
+                        android:layout_marginTop="12dp"/>
+
+                    <EditText
+                        android:id="@+id/et_stripes_amount_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Stripes_amount_details"
+                        android:textSize="15sp"
+                        android:padding="12dp"
+                        android:textStyle="bold"
+                        android:inputType="numberDecimal"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="12dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Notes_details"
+                        android:textSize="15sp"
+                        android:padding="12dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorGreen"
+                        android:layout_marginTop="12dp"/>
+
+                    <EditText
+                        android:id="@+id/et_notes_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Notes_details"
+                        android:textSize="15sp"
+                        android:padding="12dp"
+                        android:textStyle="bold"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="12dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
+

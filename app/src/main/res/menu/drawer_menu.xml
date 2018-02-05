@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/action_add"
+            android:title="Add new Medicine"
+            android:icon="@drawable/ic_add_circle_white_48dp"
+            ></item>
+    </group>
+
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/action_import_medicine_list"
+                android:title="Match Exist and needed medicines"
+                android:icon="@drawable/ic_compare_icon"></item>
+        </menu>
+
+    </item>
+</menu>
