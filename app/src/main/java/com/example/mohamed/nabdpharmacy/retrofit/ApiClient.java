@@ -1,4 +1,4 @@
-package com.example.mohamed.nabdpharmacy;
+package com.example.mohamed.nabdpharmacy.retrofit;
 
 
 import android.content.Context;
@@ -13,13 +13,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 
-class ApiClient {
+public class ApiClient {
 
     static Retrofit retrofit;
 //    public static final String BASE_URL ="http://10.0.2.2/PharmacyApp/";
 private static final String BASE_URL ="https://nabdpharmacy.000webhostapp.com/";
 
-    static Retrofit getApiClient(Context context){
+    public static Retrofit getApiClient(Context context){
         if(retrofit ==null){
             int cacheSize = 10 * 1024 * 1024; // 10 MB
             Cache cache = new Cache(context.getCacheDir(), cacheSize);

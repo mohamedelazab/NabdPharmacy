@@ -1,4 +1,4 @@
-package com.example.mohamed.nabdpharmacy;
+package com.example.mohamed.nabdpharmacy.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -16,6 +16,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.mohamed.nabdpharmacy.retrofit.ApiClient;
+import com.example.mohamed.nabdpharmacy.retrofit.ApiInterface;
+import com.example.mohamed.nabdpharmacy.dialog.MyDialogs;
+import com.example.mohamed.nabdpharmacy.R;
 import com.example.mohamed.nabdpharmacy.model.Product;
 
 import java.io.ByteArrayOutputStream;
@@ -157,7 +161,7 @@ public class AddMedicineActivity extends AppCompatActivity implements View.OnCli
     public void insertData(){
         MyDialogs.showProgressDialog(this);
         String imagePath =imageToString();
-        ApiInterface apiInterface =ApiClient.getApiClient(this).create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(this).create(ApiInterface.class);
         apiInterface.insertData(imagePath,
                 etNewName.getText().toString().trim(),
                 etNewExpirationDate.getText().toString().trim(),

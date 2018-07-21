@@ -1,4 +1,4 @@
-package com.example.mohamed.nabdpharmacy;
+package com.example.mohamed.nabdpharmacy.retrofit;
 
 import com.example.mohamed.nabdpharmacy.model.Product;
 
@@ -25,13 +25,11 @@ public interface ApiInterface {
                              @Field("stripes_amount") float stripesAmount, @Field("notes") String notes,
                              @Field("image_path") String imagePath);
 
-
     @FormUrlEncoded
     @POST("insert.php")
     Call<Product> insertData(@Field("image_path") String imagePath, @Field("name") String name,
                              @Field("expiration_date") String expirationDate, @Field("packages_amount")  float packagesAmount,
                              @Field("stripes_amount") float stripesAmount, @Field("notes") String notes);
-
 
     @FormUrlEncoded
     @POST("delete.php")

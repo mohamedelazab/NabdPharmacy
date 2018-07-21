@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.mohamed.nabdpharmacy.MainActivity">
+    tools:context="com.example.mohamed.nabdpharmacy.activity.MainActivity">
 
         <include
             android:id="@+id/bar_main"

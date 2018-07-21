@@ -1,4 +1,4 @@
-package com.example.mohamed.nabdpharmacy;
+package com.example.mohamed.nabdpharmacy.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,6 +19,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.mohamed.nabdpharmacy.retrofit.ApiClient;
+import com.example.mohamed.nabdpharmacy.retrofit.ApiInterface;
+import com.example.mohamed.nabdpharmacy.dialog.MyDialogs;
+import com.example.mohamed.nabdpharmacy.R;
 import com.example.mohamed.nabdpharmacy.adapter.RecyclerAdapter;
 import com.example.mohamed.nabdpharmacy.model.Product;
 import com.example.mohamed.nabdpharmacy.utilities.ConnectionUtils;

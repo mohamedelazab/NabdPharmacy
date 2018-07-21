@@ -1,4 +1,4 @@
-package com.example.mohamed.nabdpharmacy;
+package com.example.mohamed.nabdpharmacy.activity;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -24,6 +24,10 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.signature.StringSignature;
+import com.example.mohamed.nabdpharmacy.retrofit.ApiClient;
+import com.example.mohamed.nabdpharmacy.retrofit.ApiInterface;
+import com.example.mohamed.nabdpharmacy.dialog.MyDialogs;
+import com.example.mohamed.nabdpharmacy.R;
 import com.example.mohamed.nabdpharmacy.model.Product;
 
 import java.io.ByteArrayOutputStream;
@@ -229,7 +233,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         MyDialogs.showProgressDialog(this);
         imagePath =imageToString();
-        ApiInterface apiInterface =ApiClient.getApiClient(DetailsActivity.this).create(ApiInterface.class);
+        ApiInterface apiInterface = ApiClient.getApiClient(DetailsActivity.this).create(ApiInterface.class);
         apiInterface.updateData(name,expirationDate,packagesAmount,stripesAmount,notes,imagePath).enqueue(new Callback<Product>() {
             @Override
             public void onResponse(@NonNull Call<Product> call, @NonNull Response<Product> response) {
