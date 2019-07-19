@@ -12,27 +12,35 @@ import java.io.Serializable;
 public class Product implements Serializable{
 
     @SerializedName("id")
+    private
     int id;
 
     @SerializedName("name")
+    private
     String name;
 
     @SerializedName("expiration_date")
+    private
     String expirationDate;
 
     @SerializedName("packages_amount")
+    private
     float packagesAmount;
 
     @SerializedName("stripes_amount")
+    private
     float stripesAmount;
 
     @SerializedName("notes")
+    private
     String notes;
 
     @SerializedName("image_path")
+    private
     String imagePath;
 
     @SerializedName("response")
+    private
     String response;
 
     public String getImagePath() {

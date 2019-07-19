@@ -14,4 +14,5 @@ public class ConnectionUtils {
         assert cm != null;
         return cm.getActiveNetworkInfo() != null;
     }
+
 }

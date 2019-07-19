@@ -34,11 +34,11 @@ public class AddMedicineActivity extends AppCompatActivity implements View.OnCli
 
     public static final int IMAGE_REQUEST =777;
 
-    Toolbar toolbar;
-    ImageView imageView;
-    EditText etNewName,etNewExpirationDate,etNewBoxesAmount,etNewStripesAmount,etNewNotes;
-    Bitmap bitmap;
-    Product p;
+    private Toolbar toolbar;
+    private ImageView imageView;
+    private EditText etNewName,etNewExpirationDate,etNewBoxesAmount,etNewStripesAmount,etNewNotes;
+    private Bitmap bitmap;
+    private Product p;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,10 +83,8 @@ public class AddMedicineActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.imageview_medicine_new:
-                selectImage();
-                break;
+        if (view.getId() == R.id.imageview_medicine_new) {
+            selectImage();
         }
     }
 
