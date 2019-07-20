@@ -22,4 +22,14 @@
     <string name="nabd_pharmacy">Nabd Pharmacy</string>
     <string name="add_new_medicine">Add new medicine</string>
     <string name="date">Date</string>
+    <string name="product_name">Name: %1$s</string>
+    <string name="expiration_date_value">Expiration Date: %1$s</string>
+    <string name="boxes_amount_value">Boxes Amount: %1$s</string>
+    <string name="stripes_amount_value">Stripes Amount: %1$s</string>
+    <string name="img_content">Product Image</string>
+    <string name="save">Save</string>
+    <string name="upload_image">upload image</string>
+    <string name="search">Search</string>
+    <string name="reload">Reload</string>
+    <string name="sort_by">Sort by</string>
 </resources>

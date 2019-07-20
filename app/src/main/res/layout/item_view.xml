@@ -4,7 +4,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="110dp"
+    android:layout_height="wrap_content"
     android:id="@+id/item_view_layout"
     android:background="@drawable/cardview_borders"
     android:foreground="?android:attr/selectableItemBackground"
@@ -14,73 +14,76 @@
     card_view:cardMaxElevation="1dp"
     card_view:cardElevation="1dp">
 
-    <LinearLayout
-        android:id="@+id/linear_layout"
-        android:orientation="vertical"
-        android:layout_width="270dp"
-        android:layout_height="100dp"
-        android:foreground="?android:attr/selectableItemBackground">
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_product_item"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/img_content" />
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:text="@string/name"
+            android:textColor="#109c87"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:textColor="#109c87"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            />
+            app:layout_constraintBottom_toTopOf="@id/tv_expiration_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_product_item" />
 
         <TextView
             android:id="@+id/tv_expiration_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
             android:text="@string/expiration_date"
-            android:layout_marginStart="15dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginLeft="15dp"
-
-
-            android:foreground="?android:attr/selectableItemBackground"
-            />
+            app:layout_constraintBottom_toTopOf="@id/tv_boxes_amount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
         <TextView
             android:id="@+id/tv_boxes_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
             android:text="@string/boxes_amount"
-            android:layout_marginStart="15dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginLeft="15dp"
-            android:foreground="?android:attr/selectableItemBackground" />
+            app:layout_constraintBottom_toTopOf="@id/tv_stipe_amount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_expiration_date" />
 
         <TextView
             android:id="@+id/tv_stipe_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/stripes_amount"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/img_product_item"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_boxes_amount" />
 
-            android:foreground="?android:attr/selectableItemBackground"
-            />
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="280dp"
-        android:layout_marginLeft="280dp"
-
-        android:foreground="?android:attr/selectableItemBackground" />
+    </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

@@ -92,7 +92,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.tv_name_copy:
+            case R.id.tv_name_title:
                 String data =etNameDetails.getText().toString().trim();
                 ClipboardManager clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
                 ClipData clipData =ClipData.newPlainText("Text Copied.!",data);
@@ -137,11 +137,11 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         toolbar = findViewById(R.id.toolbar_details);
         appBarLayout = findViewById(app_bar_layout);
         collapseImageView = findViewById(R.id.collapse_imageView);
-        etNameDetails = findViewById(R.id.tv_name_details);
-        etExDateDetails = findViewById(R.id.tv_expiration_date_details);
-        etBoxesNumDetails = findViewById(R.id.tv_boxes_amount_details);
-        etStripesNumDetails = findViewById(R.id.tv_stripes_amount_details);
-        etNotesDetails = findViewById(R.id.tv_notes_details);
+        etNameDetails = findViewById(R.id.et_name_details);
+        etExDateDetails = findViewById(R.id.et_expiration_date_details);
+        etBoxesNumDetails = findViewById(R.id.et_boxes_amount_details);
+        etStripesNumDetails = findViewById(R.id.et_stripes_amount_details);
+        etNotesDetails = findViewById(R.id.et_notes_details);
 
         etNameDetails.setTextColor(Color.BLACK);
         etExDateDetails.setTextColor(Color.BLACK);

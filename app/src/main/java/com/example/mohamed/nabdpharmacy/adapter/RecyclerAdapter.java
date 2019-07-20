@@ -31,32 +31,32 @@ import java.util.List;
  * Created by mohamed on 01/10/17.
  */
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> implements FastScrollRecyclerView.SectionedAdapter{
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> implements FastScrollRecyclerView.SectionedAdapter {
 
     private List<Product> productList;
     private Context context;
-    Product product;
 
-    public RecyclerAdapter(Context context, List<Product> productList){
-        this.context =context;
-        this.productList =productList;
+    public RecyclerAdapter(Context context, List<Product> productList) {
+        this.context = context;
+        this.productList = productList;
     }
 
+    @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_view,parent,false);
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.item_view, parent, false);
         return new MyViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.tvName.setText("Name: "+productList.get(position).getName());
-        holder.tvExpirationDate.setText("Expiration Date: "+String.valueOf(productList.get(position).getExpirationDate()));
-        holder.tvBoxesAmount.setText(String.valueOf("Boes Amount: "+productList.get(position).getPackagesAmount()));
-        holder.tvStipesAmount.setText("Stripes Amount: "+String.valueOf(productList.get(position).getStripesAmount()));
+        holder.tvName.setText(context.getString(R.string.product_name, productList.get(position).getName()));
+        holder.tvExpirationDate.setText(context.getString(R.string.expiration_date_value, String.valueOf(productList.get(position).getExpirationDate())));
+        holder.tvBoxesAmount.setText(String.valueOf(context.getString(R.string.boxes_amount_value, String.valueOf(productList.get(position).getPackagesAmount()))));
+        holder.tvStripesAmount.setText(context.getString(R.string.stripes_amount_value, String.valueOf(productList.get(position).getStripesAmount())));
 
-       // Glide.with(context).load(productList.get(position).getImagePath()).into(holder.imageView);
+        // Glide.with(context).load(productList.get(position).getImagePath()).into(holder.imageView);
 
         Glide.with(context)
                 .load(productList.get(position).getImagePath())
@@ -78,71 +78,25 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
-        TextView tvName,tvExpirationDate,tvBoxesAmount,tvStipesAmount;
-        ImageView imageView;
-        CardView cardView;
-        LinearLayout linearLayout;
+        private TextView tvName, tvExpirationDate, tvBoxesAmount, tvStripesAmount;
+        private ImageView imageView;
+        private CardView cardView;
+        private LinearLayout linearLayout;
 
         MyViewHolder(View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_name);
             tvExpirationDate = itemView.findViewById(R.id.tv_expiration_date);
             tvBoxesAmount = itemView.findViewById(R.id.tv_boxes_amount);
-            tvStipesAmount = itemView.findViewById(R.id.tv_stipe_amount);
-            imageView = itemView.findViewById(R.id.image_view);
+            tvStripesAmount = itemView.findViewById(R.id.tv_stipe_amount);
+            imageView = itemView.findViewById(R.id.img_product_item);
             cardView = itemView.findViewById(R.id.item_view_layout);
-            linearLayout = itemView.findViewById(R.id.linear_layout);
+            linearLayout = itemView.findViewById(R.id.constraint_layout);
 
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
-
-//            itemView.setOnLongClickListener(new View.OnLongClickListener() {
-//                @Override
-//                public boolean onLongClick(View view) {
-//                    AlertDialog.Builder builder =new AlertDialog.Builder(context);
-//                    builder.setTitle("Delete");
-//                    builder.setMessage("Delete "+product.getName()+" ?");
-//                    builder.setCancelable(true);
-//
-//                    builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                            final int p =getLayoutPosition();
-//                            ApiInterface apiInterface = ApiClient.getApiClient(context).create(ApiInterface.class);
-//                            Call<Product> delCall =apiInterface.deleteData(productList.get(p).getName());
-//                            delCall.enqueue(new Callback<Product>() {
-//                                @Override
-//                                public void onResponse(Call<Product> call, Response<Product> response) {
-//                                    product =response.body();
-//                                    Toast.makeText(context, "done.! "+product.getResponse(), Toast.LENGTH_SHORT).show();
-//                                    productList.remove(p);
-//                                    notifyChange(p);
-//                                }
-//
-//                                @Override
-//                                public void onFailure(Call<Product> call, Throwable t) {
-//                                    // Toast.makeText(MainActivity.this,"Something Error.!", Toast.LENGTH_SHORT).show();
-//                                }
-//                            });
-//
-//                        }
-//                    });
-//
-//                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                        }
-//                    });
-//
-//                    AlertDialog dialog =builder.create();
-//                    dialog.show();
-//                    return true;
-//                }
-//            });
 
         }
 
@@ -160,17 +114,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     private ItemClickCallBack itemClickCallBack;
 
-    public interface ItemClickCallBack{
+    public interface ItemClickCallBack {
         void onItemClick(int p);
+
         void onItemLongClick(int p);
     }
-    public void setItemClickCallBack(ItemClickCallBack itemClickCallBack){
-        this.itemClickCallBack =itemClickCallBack;
+
+    public void setItemClickCallBack(ItemClickCallBack itemClickCallBack) {
+        this.itemClickCallBack = itemClickCallBack;
     }
 
     //filter list when use search function
-    public void setFilter(List<Product> newList){
-        productList =new ArrayList<>();
+    public void setFilter(List<Product> newList) {
+        productList = new ArrayList<>();
         productList.addAll(newList);
         notifyDataSetChanged();
     }
@@ -189,19 +145,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
 
     //sort list by date..
-    public void dateSorting(List<Product> productList){
-        if (productList.size()>0){
+    public void dateSorting(List<Product> productList) {
+        if (productList.size() > 0) {
             Collections.sort(productList, new Comparator<Product>() {
                 @SuppressLint("SimpleDateFormat")
-                SimpleDateFormat dateFormat =new SimpleDateFormat("yyyy mm dd");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy mm dd");
+
                 @Override
                 public int compare(Product product, Product t1) {
 
-                    int comparingResult =0;
+                    int comparingResult = 0;
                     try {
-                        Date d1 =dateFormat.parse(product.getExpirationDate());
-                        Date d2 =dateFormat.parse(product.getExpirationDate());
-                        comparingResult =d1.compareTo(d2);
+                        Date d1 = dateFormat.parse(product.getExpirationDate());
+                        Date d2 = dateFormat.parse(product.getExpirationDate());
+                        comparingResult = d1.compareTo(d2);
                     } catch (ParseException e) {
                         e.printStackTrace();
                         comparingResult = product.getExpirationDate().compareTo(t1.getExpirationDate());
@@ -215,25 +172,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
 
     //notify changes
-    public void notifyChange(int position){
+    public void notifyChange(int position) {
         notifyItemRemoved(position);
     }
 
-    public Product getItem (int position) {
-       // Toast.makeText(context, ""+productList.get(position).getImagePath(), Toast.LENGTH_SHORT).show();
+    public Product getItem(int position) {
+        // Toast.makeText(context, ""+productList.get(position).getImagePath(), Toast.LENGTH_SHORT).show();
         return productList.get(position);
     }
 
-    //clear cache in glide
-    public void clear(){
-       // productList.clear();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Glide.get(context).clearDiskCache();
-            }
-        }).start();
-
-        notifyDataSetChanged();
-    }
 }

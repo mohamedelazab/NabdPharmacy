@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/action_search"
-        android:title="Search"
+        android:title="@string/search"
         android:icon="@drawable/ic_action_search"
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView">
@@ -12,14 +12,14 @@
 
     <item
         android:id="@+id/action_reload"
-        android:title="Reload"
+        android:title="@string/reload"
         android:icon="@drawable/ic_action_reload"
         app:showAsAction="ifRoom|collapseActionView">
     </item>
 
     <item
         android:id="@+id/action_sort"
-        android:title="Sort by"
+        android:title="@string/sort_by"
         android:icon="@drawable/ic_action_sort"
         app:showAsAction="ifRoom|collapseActionView">
 
